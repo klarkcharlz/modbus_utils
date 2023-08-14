@@ -1,0 +1,9 @@
+version: '3'
+services:
+  test:
+    build: .
+    privileged: true
+    network_mode: "host"
+    command: bash -c "
+      python check_usb_rs485.py /dev/ttyUSB0
+      "
